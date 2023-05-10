@@ -28,7 +28,12 @@
                     <button><a href="#portfolio">OUR PORTFOLIO</a></button>
                 </div>
             </div>
-            <img src="img/tear.png" alt="golovna kapla" class="tear-img">
+            <div id="scene">
+                <img data-depth="0.2" src="img/tear.png" alt="golovna kapla" class="tear-img">
+                <img data-depth="0.6" src="img/kapla2.png" alt="" class="kapla2-img">
+                <img data-depth="0.1" src="img/kapla1.png" alt="" class="kapla1-img">
+                <img data-depth="0.4" src="img/kapla3.png" alt="" class="kapla3-img">
+            </div>
             <img src="img/mouse.svg" alt="мишка" class="mouse-scroll">
         </header>
         <div class="pagination-block">
@@ -45,32 +50,97 @@
                     <img src="img/content-icon.svg" alt="">
                     <div class="__col-text">
                         <h2>Content</h2>
-                        <p>Subject shooting Video and animation creation Photography and retouching Creating presentations</p>
+                        <p>Subject shooting</p>
+                        <p>Video and animation creation</p>
+                        <p>Photography and retouching</p>
+                        <p>Creating presentations</p>
                     </div>
                 </div>
                 <div class="services-block__col">
-                    <img src="img/content-icon.svg" alt="">
+                    <img src="img/monitor-icon.svg" alt="">
                     <div class="__col-text">
-                        <h2>Content</h2>
-                        <p>Subject shooting Video and animation creation Photography and retouching Creating presentations</p>
+                        <h2>Design</h2>
+                        <p>Website design development</p>
+                        <p>UI design</p>
+                        <p>Development of corporate</p>
+                        <p>style and logo</p>
                     </div>
                 </div>
                 <div class="services-block__col">
-                    <img src="img/content-icon.svg" alt="">
+                    <img src="img/development.svg" alt="">
                     <div class="__col-text">
-                        <h2>Content</h2>
-                        <p>Subject shooting Video and animation creation Photography and retouching Creating presentations</p>
+                        <h2>Development</h2>
+                        <p>Order the development of a landing page</p>
+                        <p>Order a business card site</p>
+                        <p>Corporate site</p>
                     </div>
                 </div>
                 <div class="services-block__col">
-                    <img src="img/content-icon.svg" alt="">
+                    <img src="img/video-marketing-icon.svg" alt="">
                     <div class="__col-text">
-                        <h2>Content</h2>
-                        <p>Subject shooting Video and animation creation Photography and retouching Creating presentations</p>
+                        <h2>Video Marketing</h2>
+                        <p>Creation and design of a
+                        YouTube channel</p>
+                        <p>YouTube channel optimization</p>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="advantages-content">
+            <h1 class="services__title">OUR ADVANTAGES</h1>
+            <h2 class="services-sub_title">ADVANTAGES OF WEBSITE DESIGN FROM "DENIS"</h2>
+            <div class="advantages-block">
+                <div class="advantages-block__col">
+                    <img src="img/like-icon.svg" alt="">
+                    <div class="__col-text">
+                        <p>Ease of perception <br> of the material by <br> people</p>
+                    </div>
+                </div>
+                <div class="advantages-block__col">
+                    <img src="img/setting-icon.svg" alt="">
+                    <div class="__col-text">
+                        <p>As a rule, good usability <br> and the ability to think <br> through the logic of <br> user behavior in <br> advance</p>
+                    </div>
+                </div>
+                <div class="advantages-block__col">
+                    <img src="img/monitor-icon.svg" alt="">
+                    <div class="__col-text">
+                        <p>Ease of <br> implementation: design <br> development and layout</p>
+                    </div>
+                </div>
+                <div class="advantages-block__col">
+                    <img src="img/development.svg" alt="">
+                    <div class="__col-text">
+                        <p>The design is unique, <br> modern and increases <br> sales</p>
+                    </div>
+                </div>
+                <div class="advantages-block__col">
+                    <img src="img/people-icon.svg" alt="">
+                    <div class="__col-text">
+                        <p>Professional Team</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="team-content">
+            <h1 class="__tilte">Team</h1>
+            <div class="team-block">
+                <div>
+                    <img src="img/lox.png" alt="lox pon">
+                    <h1>Ilya Nikitiuk</h1>
+                </div>
+                <div>
+                    <img src="img/korol.png" alt="korol pon">
+                    <h1>Denis Zholkevskiy</h1>
+                </div>
+            </div>
+        </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+    <script>
+        var scene = document.getElementById('scene');
+        var parallaxInstance = new Parallax(scene);
+    </script>
+    
 </body>
 </html>

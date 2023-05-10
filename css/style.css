@@ -16,8 +16,12 @@ body {
   overflow-x: hidden;
 }
 
+::selection {
+  background: #D15151;
+}
+
 .wrapper {
-  max-width: 1240px;
+  max-width: 1245px;
   margin: 0 auto;
 }
 
@@ -30,6 +34,7 @@ body {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  z-index: 2;
 }
 .header .header-text__block .__title {
   font-weight: 800;
@@ -65,11 +70,20 @@ body {
   font-size: 30px;
 }
 .header .tear-img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  z-index: -2;
+  margin-top: 1vh;
+  margin-left: 200px;
+}
+.header .kapla2-img {
   z-index: -1;
+  margin-left: 1000px;
+  margin-top: 50px;
+}
+.header .kapla1-img {
+  margin-left: 100px;
+}
+.header .kapla3-img {
+  margin-top: 70vh;
 }
 .header .mouse-scroll {
   position: absolute;
@@ -123,6 +137,17 @@ body {
   border-radius: 50%;
 }
 
+.services-content {
+  position: relative;
+}
+.services-content::before {
+  content: url("../img/mini-kapla.png");
+  display: block;
+  z-index: -1;
+  position: absolute;
+  right: 40px;
+  bottom: 0;
+}
 .services-content .services__title {
   color: #FFFFFF;
   font-weight: 500;
@@ -136,7 +161,7 @@ body {
   font-size: 30px;
   line-height: 35px;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 .services-content .services-block {
   margin-top: 38px;
@@ -154,6 +179,21 @@ body {
 .services-content .services-block .services-block__col:nth-child(2n) {
   width: 500px;
   height: 320px;
+}
+.services-content .services-block .services-block__col:nth-child(3) .__col-text h2::after {
+  width: 182px;
+}
+.services-content .services-block .services-block__col:nth-child(4) .__col-text h2::after {
+  width: 227px;
+}
+.services-content .services-block .services-block__col:nth-child(3) img {
+  height: 80px;
+}
+.services-content .services-block .services-block__col:nth-child(4) img {
+  height: 59px;
+}
+.services-content .services-block .services-block__col:nth-child(4) p {
+  width: 340px;
 }
 .services-content .services-block .services-block__col {
   background: rgba(255, 255, 255, 0.05);
@@ -188,6 +228,123 @@ body {
   height: 1px;
 }
 .services-content .services-block .services-block__col .__col-text p {
-  width: 334px;
-  margin-top: 20px;
+  margin-top: 10px;
+  font-weight: 400;
+}
+
+.advantages-content {
+  margin-top: 50px;
+  position: relative;
+}
+.advantages-content::after {
+  content: url("../img/big-kapla.png");
+  display: block;
+  z-index: -1;
+  position: absolute;
+  left: 40px;
+  top: 50px;
+}
+.advantages-content::before {
+  content: url("../img/kapla9.png");
+  display: block;
+  z-index: -1;
+  position: absolute;
+  right: 340px;
+  bottom: 400px;
+}
+.advantages-content .services__title {
+  color: #FFFFFF;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 47px;
+  text-align: center;
+}
+.advantages-content .services-sub_title {
+  color: #9A9A9A;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 35px;
+  text-align: center;
+  margin-top: 10px;
+}
+.advantages-content .advantages-block {
+  margin-top: 30px;
+  gap: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.advantages-content .advantages-block::before {
+  content: url("../img/kapla7.png");
+  display: block;
+  z-index: -1;
+  position: absolute;
+  left: 120px;
+  bottom: 70px;
+}
+.advantages-content .advantages-block .advantages-block__col {
+  display: flex;
+  flex-direction: column;
+  padding-top: 30px;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 29px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(253, 0, 0, 0.05) 100%);
+  backdrop-filter: blur(15px);
+  border-radius: 10px;
+  height: 460px;
+  max-width: 397px;
+  width: 100%;
+}
+.advantages-content .advantages-block .advantages-block__col img {
+  width: 85px;
+  margin-bottom: 60px;
+}
+
+.team-content {
+  margin-top: 80px;
+  text-align: center;
+  position: relative;
+}
+.team-content::before {
+  content: url("../img/kapla5.png");
+  display: block;
+  z-index: -1;
+  position: absolute;
+  right: 30px;
+  bottom: 90px;
+}
+.team-content::after {
+  content: url("../img/kapla4.png");
+  display: block;
+  z-index: -1;
+  position: absolute;
+  left: 100px;
+  bottom: 70px;
+}
+.team-content .__tilte {
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 47px;
+  text-align: center;
+  color: #FFFFFF;
+}
+.team-content .team-block {
+  margin-top: 70px;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+.team-content div img {
+  border-radius: 10px;
+}
+.team-content div h1 {
+  color: #fff;
+  text-align: center;
+  font-size: 40px;
+  margin-top: 10px;
+  font-weight: 500;
 }

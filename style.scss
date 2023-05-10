@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@700&display=swap');
+
 * {
     padding: 0;
     margin: 0;
@@ -15,8 +16,11 @@ body {
     background: linear-gradient(252.44deg, #363449 14.21%, #141416 100%);
     overflow-x: hidden;
 }
+::selection {
+    background: $color-hover;
+}
 .wrapper {
-    max-width: 1240px;
+    max-width: 1245px;
     margin: 0 auto;
 }
 .header {
@@ -27,6 +31,7 @@ body {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
+        z-index: 2;
         .__title {
             font-weight: 800;
             font-size: 50px;
@@ -62,11 +67,20 @@ body {
         }
     }
     .tear-img {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        z-index: -2;
+        margin-top: 1vh;
+        margin-left: 200px;
+    }
+    .kapla2-img {
         z-index: -1;
+        margin-left: 1000px;
+        margin-top: 50px;
+    }
+    .kapla1-img {
+        margin-left: 100px;
+    }
+    .kapla3-img {
+        margin-top: 70vh;
     }
     .mouse-scroll {
         position: absolute;
@@ -119,6 +133,15 @@ body {
     }
 }
 .services-content {
+    position: relative;
+    &::before {
+        content: url('../img/mini-kapla.png');
+        display: block;
+        z-index: -1;
+        position: absolute;
+        right: 40px;
+        bottom: 0;
+    }
     .services__title {
         color: #FFFFFF;
         font-weight: 500;
@@ -132,7 +155,7 @@ body {
         font-size: 30px;
         line-height: 35px;
         text-align: center;
-        margin-top: 20px;
+        margin-top: 10px;
     }
     .services-block {
         margin-top: 38px;
@@ -150,7 +173,25 @@ body {
             width: 500px;
             height: 320px;
         }
+        .services-block__col:nth-child(3) .__col-text h2::after {
+            width: 182px;
+        }
+        .services-block__col:nth-child(4) .__col-text h2::after {
+            width: 227px;
+        }
+        .services-block__col:nth-child(3) img {
+            height: 80px;
+        }
+        .services-block__col:nth-child(4) {
+            img {
+                height: 59px;
+            }
+            p {
+                width: 340px;
+            }
+        }
         .services-block__col {
+            // backdrop-filter: blur(25px);
             background: rgba(255, 255, 255, 0.05);
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 30px rgba(0, 0, 0, 0.25);
             border-radius: 10px;
@@ -179,12 +220,130 @@ body {
                         background-color: #fff;
                         height: 1px;
                     }
+                    
                 }
                 p {
-                    width: 334px;
-                    margin-top: 20px;
+                    margin-top: 10px;
+                    font-weight: 400;
                 }
             }
+        }
+    }
+}
+.advantages-content {
+    margin-top: 50px;
+    position: relative;
+    &::after {
+        content: url('../img/big-kapla.png');
+        display: block;
+        z-index: -1;
+        position: absolute;
+        left: 40px;
+        top: 50px;
+    }
+    &::before {
+        content: url('../img/kapla9.png');
+        display: block;
+        z-index: -1;
+        position: absolute;
+        right: 340px;
+        bottom: 400px;
+    }
+    .services__title {
+        color: #FFFFFF;
+        font-weight: 500;
+        font-size: 40px;
+        line-height: 47px;
+        text-align: center;
+    }
+    .services-sub_title {
+        color: #9A9A9A;
+        font-weight: 400;
+        font-size: 30px;
+        line-height: 35px;
+        text-align: center;
+        margin-top: 10px;
+    }
+    .advantages-block {
+        margin-top: 30px;
+        gap: 25px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        &::before {
+            content: url('../img/kapla7.png');
+            display: block;
+            z-index: -1;
+            position: absolute;
+            left: 120px;
+            bottom: 70px;
+        }
+        .advantages-block__col {
+            display: flex;
+            flex-direction: column;
+            padding-top: 30px;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            font-weight: 400;
+            font-size: 25px;
+            line-height: 29px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(253, 0, 0, 0.05) 100%);
+            backdrop-filter: blur(15px);
+            border-radius: 10px;
+            height: 460px;
+            max-width: 397px;
+            width: 100%;
+            img {
+                width: 85px;
+                margin-bottom: 60px;
+            }
+        }
+    }
+}
+.team-content {
+    margin-top: 80px;
+    text-align: center;
+    position: relative;
+    &::before {
+        content: url('../img/kapla5.png');
+        display: block;
+        z-index: -1;
+        position: absolute;
+        right: 30px;
+        bottom: 90px;
+    }
+    &::after {
+        content: url('../img/kapla4.png');
+        display: block;
+        z-index: -1;
+        position: absolute;
+        left: 100px;
+        bottom: 70px;
+    }
+    .__tilte {
+        font-weight: 500;
+        font-size: 40px;
+        line-height: 47px;
+        text-align: center;
+        color: #FFFFFF;      
+    }
+    .team-block {
+        margin-top: 70px;
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+    }
+    div {
+        img {
+            border-radius: 10px;
+        }
+        h1 {
+            color: #fff;
+            text-align: center;
+            font-size: 40px;
+            margin-top: 10px;
+            font-weight: 500;
         }
     }
 }
