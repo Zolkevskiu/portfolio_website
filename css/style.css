@@ -1,10 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Maven+Pro:wght@700&display=swap");
+@import url(https://fonts.googleapis.com/css?family=Maven+Pro:regular,500,600,700,800,900);
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   font-family: "Maven Pro", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 50px;
 }
 
 body {
@@ -14,6 +18,7 @@ body {
   min-width: 100vw;
   background: linear-gradient(252.44deg, #363449 14.21%, #141416 100%);
   overflow-x: hidden;
+  padding-bottom: 75px;
 }
 
 ::selection {
@@ -41,7 +46,7 @@ body {
   font-size: 50px;
   color: #fff;
 }
-.header .header-text__block .__title.__title::first-letter {
+.header .header-text__block .__title-active {
   color: #D15151;
 }
 .header .header-text__block .__sub-title {
@@ -55,7 +60,7 @@ body {
   gap: 30px;
   display: flex;
 }
-.header .header-text__block .__button-content button {
+.header .header-text__block .__button-content .__button {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(15px);
   width: 288px;
@@ -63,11 +68,30 @@ body {
   border: none;
   outline: none;
   border-radius: 20px;
-}
-.header .header-text__block .__button-content button a {
+  position: relative;
   text-decoration: none;
   color: #fff;
   font-size: 30px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.header .header-text__block .__button-content .__button::before {
+  content: "";
+  z-index: -1;
+  display: block;
+  position: absolute;
+  background: rgb(209, 81, 81);
+  border-radius: 50%;
+  height: 300px;
+  left: -105%;
+  top: 50%;
+  transform: translateY(-20%);
+  width: 300px;
+  transition: all 0.4s;
+}
+.header .header-text__block .__button-content .__button:hover::before {
+  left: 0%;
+  transform: translateY(-50%);
 }
 .header .tear-img {
   z-index: -2;
@@ -90,8 +114,17 @@ body {
   bottom: 60px;
   left: 50%;
   transform: translateX(-50%);
+  animation: mouse 2s infinite;
 }
 
+@keyframes mouse {
+  0%, 100% {
+    bottom: 60px;
+  }
+  50% {
+    bottom: 65px;
+  }
+}
 .navbar {
   height: 100px;
   position: relative;
@@ -125,6 +158,7 @@ body {
 .pagination-block {
   display: flex;
   flex-direction: column;
+  align-items: center;
   position: fixed;
   top: 50%;
   right: 100px;
@@ -135,6 +169,14 @@ body {
   height: 8px;
   outline: 2px solid #fff;
   border-radius: 50%;
+}
+
+.pagination-block .href-active {
+  background: #D15151;
+  outline: 0;
+  width: 12px;
+  height: 12px;
+  transition: background 0.2s;
 }
 
 .services-content {
@@ -285,8 +327,8 @@ body {
 .advantages-content .advantages-block .advantages-block__col {
   display: flex;
   flex-direction: column;
-  padding-top: 30px;
   align-items: center;
+  padding-top: 30px;
   text-align: center;
   color: #fff;
   font-weight: 400;
@@ -299,9 +341,30 @@ body {
   max-width: 397px;
   width: 100%;
 }
-.advantages-content .advantages-block .advantages-block__col img {
+.advantages-content .advantages-block .advantages-block__col:nth-child(1) .__col-text {
+  margin-top: 73px;
+}
+.advantages-content .advantages-block .advantages-block__col:nth-child(2) .__col-text {
+  margin-top: 66px;
+}
+.advantages-content .advantages-block .advantages-block__col:nth-child(3) .__col-text {
+  margin-top: 69px;
+}
+.advantages-content .advantages-block .advantages-block__col:nth-child(4) .__col-text {
+  margin-top: 73px;
+}
+.advantages-content .advantages-block .advantages-block__col:nth-child(5) .__col-text {
+  margin-top: 90px;
+}
+.advantages-content .advantages-block .advantages-block__col:nth-child(1) img {
   width: 85px;
-  margin-bottom: 60px;
+  height: 81px;
+}
+.advantages-content .advantages-block .advantages-block__col:nth-child(2) img {
+  width: 84px;
+}
+.advantages-content .advantages-block .advantages-block__col:nth-child(3) img {
+  height: 86px;
 }
 
 .team-content {
@@ -347,4 +410,191 @@ body {
   font-size: 40px;
   margin-top: 10px;
   font-weight: 500;
+}
+
+.portfolio-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  margin-top: 100px;
+}
+.portfolio-content .__portfolio-block:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.portfolio-content .__portfolio-block {
+  width: 100%;
+  height: 100%;
+}
+.portfolio-content .__portfolio-block .__ebalo {
+  position: sticky;
+  top: 70px;
+}
+.portfolio-content .__portfolio-block .__name-block {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  border-radius: 10px;
+  max-width: 500px;
+  width: 100%;
+  height: 160px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 29px;
+  text-align: center;
+  color: #FFFFFF;
+  padding: 7px 0;
+}
+.portfolio-content .__portfolio-block .__name-block span {
+  color: #FFF387;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.portfolio-content .__portfolio-block .__name-block span img {
+  position: relative;
+  left: -10px;
+}
+.portfolio-content .__portfolio-block .__education-content {
+  margin-top: 40px;
+  width: 100%;
+}
+.portfolio-content .__portfolio-block .__education-content .__about-block {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  border-radius: 10px;
+  height: auto;
+  margin-top: 20px;
+  font-size: 16px;
+  color: #fff;
+  padding: 15px 20px;
+}
+.portfolio-content .__portfolio-block .__education-content .__about-block ul {
+  margin-left: 15px;
+}
+.portfolio-content .__portfolio-block .__education-content .__about-block ul li {
+  margin-top: 5px;
+}
+.portfolio-content .__portfolio-block .__education-content .__about-block a {
+  color: #fff;
+}
+.portfolio-content .__portfolio-block .__education-content .__title {
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 35px;
+  text-align: center;
+  color: #FFFFFF;
+  text-align: center;
+}
+.portfolio-content .__portfolio-block .__education-content .__block {
+  margin-top: 30px;
+  width: 100%;
+}
+.portfolio-content .__portfolio-block .__education-content .__block .__col {
+  display: flex;
+  align-items: center;
+  font-size: 25px;
+  color: #fff;
+  padding: 0 30px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  border-radius: 10px;
+  width: 100%;
+  height: 80px;
+  margin-top: 20px;
+}
+.portfolio-content .__portfolio-block .__education-content .__block .__col span {
+  margin-top: -3px;
+  margin-left: 25px;
+  font-weight: 500;
+}
+.portfolio-content .__portfolio-block .__education-content .__block .__col p {
+  margin-left: 5px;
+  font-weight: 400;
+}
+
+.works-title {
+  margin-top: 50px;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 35px;
+  text-align: center;
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  padding: 5px 20px;
+  width: auto;
+  max-width: 250px;
+  border-radius: 10px;
+}
+
+.works-content {
+  margin-top: 45px;
+  gap: 30px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container .image-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+.container .image-container img {
+  cursor: pointer;
+}
+
+.container .image-container .image {
+  height: 250px;
+  width: 350px;
+  border: 3px solid #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.container .image-container .image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: 0.2s linear;
+}
+
+.container .image-container .image:hover img {
+  transform: scale(1.1);
+}
+
+.container .popup-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.9);
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+  display: none;
+}
+
+.container .popup-image span {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 60px;
+  font-weight: bolder;
+  color: #fff;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.container .popup-image img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 3px solid #fff;
+  border-radius: 5px;
+  height: 600px;
+  object-fit: cover;
 }

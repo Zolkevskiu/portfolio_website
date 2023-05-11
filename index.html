@@ -5,44 +5,57 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <meta name="robots" content="noindex" />
     <title>Portfolio</title>
 </head>
-<body>
+<body id="body">
     <div class="wrapper">
         <header class="header">
             <nav class="navbar">
                 <img src="img/logo.svg" alt="logo" class="logo">
                 <ul class="navbar__ul">
-                    <li class="navbar__list"><a href="#">Home</a></li>
-                    <li class="navbar__list"><a href="#">About</a></li>
-                    <li class="navbar__list"><a href="#">Contact</a></li>
+                    <li class="navbar__list"><a href="index.html">Home</a></li>
+                    <li class="navbar__list"><a href="denis_portfolio.html">Denis</a></li>
+                    <li class="navbar__list"><a href="lox_portfolio.html">Ilya</a></li>
                 </ul>
             </nav>
             <div class="header-text__block">
-                <h1 class="__title">Website and </h1>
-                <h1 class="__title">Design for your</h1>
-                <h1 class="__title">Website</h1>
+                <h1 class="__title" id="app">Website and </h1>
+                <!-- <h1 class="__title">Design for your</h1>
+                <h1 class="__title">Website</h1> -->
                 <p class="__sub-title">Your site - is our work</p>
                 <div class="__button-content">
-                    <button><a href="#services">SERVICES</a></button>
-                    <button><a href="#portfolio">OUR PORTFOLIO</a></button>
+                    <a href="#services"><button class="__button">SERVICES</button></a>
+                    <a href="#portfolio"><button class="__button">OUR PORTFOLIO</button></a>
                 </div>
             </div>
             <div id="scene">
-                <img data-depth="0.2" src="img/tear.png" alt="golovna kapla" class="tear-img">
-                <img data-depth="0.6" src="img/kapla2.png" alt="" class="kapla2-img">
-                <img data-depth="0.1" src="img/kapla1.png" alt="" class="kapla1-img">
-                <img data-depth="0.4" src="img/kapla3.png" alt="" class="kapla3-img">
+                <img data-depth="0.2" src="img/tear.png" alt="golovna kapla" class="tear-img" data-aos="zoom-in" data-aos-duration="500">
+                <img data-depth="0.6" src="img/kapla2.png" alt="" class="kapla2-img" data-aos="fade-left" data-aos-duration="600">
+                <img data-depth="0.1" src="img/kapla1.png" alt="" class="kapla1-img" data-aos="fade-right" data-aos-duration="800">
+                <img data-depth="0.4" src="img/kapla3.png" alt="" class="kapla3-img" data-aos="fade-right" data-aos-duration="1000">
             </div>
-            <img src="img/mouse.svg" alt="мишка" class="mouse-scroll">
+            <a href="#mouseClick" class="mouse-scroll"><img src="img/mouse.svg" alt="мишка"></a>
         </header>
         <div class="pagination-block">
-            <a href=""></a>
-            <a href=""></a>
-            <a href=""></a>
-            <a href=""></a>
+            <a href="#body" class="href-active" data-aos="fade-left" data-aos-duration="500"></a>
+            <a href="#mouseClick" data-aos="fade-left" data-aos-duration="700"></a>
+            <a href="#our" data-aos="fade-left" data-aos-duration="900"></a>
+            <a href="#team" data-aos="fade-left" data-aos-duration="1100"></a>
         </div>
-        <div class="services-content">
+        <script>
+            const pagination_href = document.querySelectorAll(".pagination-block a")
+            pagination_href.forEach(item => {
+                item.addEventListener("click", ()=> {
+                    pagination_href.forEach(item => {
+                        item.classList.remove("href-active")
+                    });
+                    item.classList.add("href-active")
+                })
+            })
+        </script>
+        <div class="services-content" id="mouseClick">
             <h1 class="services__title">SERVICES</h1>
             <h2 class="services-sub_title">WHAT ARE WE DOING?</h2>
             <div class="services-block">
@@ -50,71 +63,71 @@
                     <img src="img/content-icon.svg" alt="">
                     <div class="__col-text">
                         <h2>Content</h2>
-                        <p>Subject shooting</p>
-                        <p>Video and animation creation</p>
-                        <p>Photography and retouching</p>
-                        <p>Creating presentations</p>
+                        <p data-aos="fade-right" data-aos-duration="500">Subject shooting</p>
+                        <p data-aos="fade-right" data-aos-duration="600">Video and animation creation</p>
+                        <p data-aos="fade-right" data-aos-duration="700">Photography and retouching</p>
+                        <p data-aos="fade-right" data-aos-duration="800">Creating presentations</p>
                     </div>
                 </div>
                 <div class="services-block__col">
                     <img src="img/monitor-icon.svg" alt="">
                     <div class="__col-text">
                         <h2>Design</h2>
-                        <p>Website design development</p>
-                        <p>UI design</p>
-                        <p>Development of corporate</p>
-                        <p>style and logo</p>
+                        <p data-aos="fade-left" data-aos-duration="500">Website design development</p>
+                        <p data-aos="fade-left" data-aos-duration="600">UI design</p>
+                        <p data-aos="fade-left" data-aos-duration="700">Development of corporate</p>
+                        <p data-aos="fade-left" data-aos-duration="800">style and logo</p>
                     </div>
                 </div>
                 <div class="services-block__col">
                     <img src="img/development.svg" alt="">
                     <div class="__col-text">
                         <h2>Development</h2>
-                        <p>Order the development of a landing page</p>
-                        <p>Order a business card site</p>
-                        <p>Corporate site</p>
+                        <p data-aos="fade-right" data-aos-duration="500">Order the development of a landing page</p>
+                        <p data-aos="fade-right" data-aos-duration="600">Order a business card site</p>
+                        <p data-aos="fade-right" data-aos-duration="700">Corporate site</p>
                     </div>
                 </div>
                 <div class="services-block__col">
                     <img src="img/video-marketing-icon.svg" alt="">
                     <div class="__col-text">
                         <h2>Video Marketing</h2>
-                        <p>Creation and design of a
+                        <p data-aos="fade-left" data-aos-duration="700">Creation and design of a
                         YouTube channel</p>
-                        <p>YouTube channel optimization</p>
+                        <p data-aos="fade-left" data-aos-duration="800">YouTube channel optimization</p>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="advantages-content">
+        <div class="advantages-content" id="our">
             <h1 class="services__title">OUR ADVANTAGES</h1>
             <h2 class="services-sub_title">ADVANTAGES OF WEBSITE DESIGN FROM "DENIS"</h2>
             <div class="advantages-block">
-                <div class="advantages-block__col">
+                <div class="advantages-block__col" data-tilt>
                     <img src="img/like-icon.svg" alt="">
                     <div class="__col-text">
                         <p>Ease of perception <br> of the material by <br> people</p>
                     </div>
                 </div>
-                <div class="advantages-block__col">
+                <div class="advantages-block__col" data-tilt>
                     <img src="img/setting-icon.svg" alt="">
                     <div class="__col-text">
                         <p>As a rule, good usability <br> and the ability to think <br> through the logic of <br> user behavior in <br> advance</p>
                     </div>
                 </div>
-                <div class="advantages-block__col">
+                <div class="advantages-block__col" data-tilt>
                     <img src="img/monitor-icon.svg" alt="">
                     <div class="__col-text">
                         <p>Ease of <br> implementation: design <br> development and layout</p>
                     </div>
                 </div>
-                <div class="advantages-block__col">
+                <div class="advantages-block__col" data-tilt>
                     <img src="img/development.svg" alt="">
                     <div class="__col-text">
                         <p>The design is unique, <br> modern and increases <br> sales</p>
                     </div>
                 </div>
-                <div class="advantages-block__col">
+                <div class="advantages-block__col" data-tilt>
                     <img src="img/people-icon.svg" alt="">
                     <div class="__col-text">
                         <p>Professional Team</p>
@@ -122,7 +135,7 @@
                 </div>
             </div>
         </div>
-        <div class="team-content">
+        <div class="team-content" id="team">
             <h1 class="__tilte">Team</h1>
             <div class="team-block">
                 <div>
@@ -136,11 +149,37 @@
             </div>
         </div>
     </div>
+    <script src="vanilla-title.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
     <script>
         var scene = document.getElementById('scene');
         var parallaxInstance = new Parallax(scene);
     </script>
-    
+    <script>
+        AOS.init();
+    </script>
+    <script>
+        var app = document.getElementById('app');
+
+        var customNodeCreator = function(character) {
+        return document.createTextNode(character);
+        }
+
+        var typewriter = new Typewriter(app, {
+        loop: true,
+        delay: 75,
+        onCreateTextNode: customNodeCreator,
+        });
+
+        typewriter.typeString('<span class="__title-active">W</span>ebsite and<br>')
+        .pauseFor(350)
+        .typeString('<span class="__title-active">D</span>esign for your<br>')
+        .pauseFor(350)
+        .typeString('<span class="__title-active">W</span>ebsite')
+        .pauseFor(350)
+        .start();
+    </script>
 </body>
 </html>
