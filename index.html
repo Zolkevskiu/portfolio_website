@@ -26,8 +26,8 @@
                 <h1 class="__title">Website</h1> -->
                 <p class="__sub-title">Your site - is our work</p>
                 <div class="__button-content">
-                    <a href="#services"><button class="__button">SERVICES</button></a>
-                    <a href="#portfolio"><button class="__button">OUR PORTFOLIO</button></a>
+                    <a href="#mouseClick"><button class="__button">SERVICES</button></a>
+                    <a href="denis_portfolio.html"><button class="__button">OUR PORTFOLIO</button></a>
                 </div>
             </div>
             <div id="scene">
@@ -38,12 +38,12 @@
             </div>
             <a href="#mouseClick" class="mouse-scroll"><img src="img/mouse.svg" alt="мишка"></a>
         </header>
-        <div class="pagination-block">
+        <!-- <div class="pagination-block">
             <a href="#body" class="href-active" data-aos="fade-left" data-aos-duration="500"></a>
             <a href="#mouseClick" data-aos="fade-left" data-aos-duration="700"></a>
             <a href="#our" data-aos="fade-left" data-aos-duration="900"></a>
             <a href="#team" data-aos="fade-left" data-aos-duration="1100"></a>
-        </div>
+        </div> -->
         <script>
             const pagination_href = document.querySelectorAll(".pagination-block a")
             pagination_href.forEach(item => {
@@ -139,11 +139,11 @@
             <h1 class="__tilte">Team</h1>
             <div class="team-block">
                 <div>
-                    <img src="img/lox.png" alt="lox pon">
+                    <a href="lox_portfolio.html"><img src="img/lox.png" alt="lox pon"></a>
                     <h1>Ilya Nikitiuk</h1>
                 </div>
                 <div>
-                    <img src="img/korol.png" alt="korol pon">
+                    <a href="denis_portfolio.html"><img src="img/korol.png" alt="korol pon"></a>
                     <h1>Denis Zholkevskiy</h1>
                 </div>
             </div>
@@ -173,13 +173,15 @@
         onCreateTextNode: customNodeCreator,
         });
 
+
         typewriter.typeString('<span class="__title-active">W</span>ebsite and<br>')
-        .pauseFor(350)
+        .pauseFor(1250)
         .typeString('<span class="__title-active">D</span>esign for your<br>')
-        .pauseFor(350)
+        .pauseFor(1250)
         .typeString('<span class="__title-active">W</span>ebsite')
-        .pauseFor(350)
+        .pauseFor(1250)
         .start();
+
     </script>
 </body>
 </html>

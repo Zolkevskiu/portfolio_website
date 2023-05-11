@@ -426,10 +426,6 @@ body {
   width: 100%;
   height: 100%;
 }
-.portfolio-content .__portfolio-block .__ebalo {
-  position: sticky;
-  top: 70px;
-}
 .portfolio-content .__portfolio-block .__name-block {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(15px);
